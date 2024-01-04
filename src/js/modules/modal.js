@@ -1,5 +1,6 @@
 const modals = () => {
-    function bindModal(triggerSelector, modalSelector, closeSelector, closeClickOverlay = true) {
+    let btnPressed = false
+    function bindModal(triggerSelector, modalSelector, closeSelector, destroy = false) {
         const trigger = document.querySelectorAll(triggerSelector),
             modal = document.querySelector(modalSelector),
             close = document.querySelector(closeSelector),
@@ -8,10 +9,13 @@ const modals = () => {
 
         trigger.forEach(item => {
             item.addEventListener('click', (e) => {
+                btnPressed = true
                 if (e.target) {
                     e.preventDefault();
                 }
-
+                if(destroy) {
+                    item.remove()
+                }
                 windows.forEach(item => {
                     item.style.display = 'none';
                 });
@@ -34,7 +38,7 @@ const modals = () => {
         });
 
         modal.addEventListener('click', (e) => {
-            if (e.target === modal && closeClickOverlay) {
+            if (e.target === modal) {
                 windows.forEach(item => {
                     item.style.display = 'none';
                 });
@@ -77,10 +81,18 @@ const modals = () => {
         return scrollWidth;
     }
 
+    function openModalByScroll(selector) {
+        window.addEventListener('scroll', () => {
+            if (!btnPressed && (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1)) {
+                document.querySelector(selector).click();
+            }
+        });
+    }
     bindModal('.button-design', '.popup-design', '.popup-design .popup-close')
     bindModal('.button-consultation', '.popup-consultation', '.popup-consultation .popup-close')
-    bindModal('.fixed-gift', '.popup-gift', '.popup-gift .popup-close ')
-    showModalByTime('.popup-consultation', 2000)
+    openModalByScroll('.fixed-gift')
+    bindModal('.fixed-gift', '.popup-gift', '.popup-gift .popup-close', true)
+    // showModalByTime('.popup-consultation', 60000)
 };
 
 export default modals;
