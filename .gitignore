@@ -1,0 +1,5 @@
+.idea/
+node_modules/
+gulpfile.js
+/dist/
+.DS_Store
