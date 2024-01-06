@@ -5,14 +5,11 @@ const sliders = (slides, dir, prev, next) => {
     const items = document.querySelectorAll(slides);
 
     function showSlides(n) {
-        if (n > items.length) {
-            slideIndex = 1;
-        }
-
-        if (n < 1) {
-            slideIndex = items.length;
-        }
-
+      if(n < slideIndex) {
+          items.forEach(item => {
+              console.log(2)
+          })
+      }
         items.forEach(item => {
             item.classList.add("animated");
             item.style.display = "none";
