@@ -90,7 +90,7 @@ const modals = () => {
     }
     bindModal('.button-design', '.popup-design', '.popup-design .popup-close')
     bindModal('.button-consultation', '.popup-consultation', '.popup-consultation .popup-close')
-    openModalByScroll('.fixed-gift')
+    // openModalByScroll('.fixed-gift')
     bindModal('.fixed-gift', '.popup-gift', '.popup-gift .popup-close', true)
     // showModalByTime('.popup-consultation', 60000)
 };
