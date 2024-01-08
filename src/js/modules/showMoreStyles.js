@@ -12,5 +12,4 @@ const showMoreStyles = (trigger, selector) => {
         })
     })
 }
-
 export default showMoreStyles
