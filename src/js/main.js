@@ -5,6 +5,7 @@ import checkTextInputs from "./modules/checkTextInputs";
 import showMoreStyles from "./modules/showMoreStyles";
 import pictureSize from "./modules/pictureSize";
 import filter from "./modules/filter";
+import forms from "./modules/form";
 window.addEventListener('DOMContentLoaded', () => {
     modals();
     slider('.feedback-slider-item', 'horizontal', '.main-prev-btn', '.main-next-btn');
@@ -15,4 +16,5 @@ window.addEventListener('DOMContentLoaded', () => {
     showMoreStyles('.button-styles', '.styles-2');
     pictureSize('.sizes-block')
     filter()
+    forms()
 });
