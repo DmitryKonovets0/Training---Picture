@@ -1,3 +1,5 @@
+import {postData} from '../services/requests';
+
 const forms = () => {
     const form = document.querySelectorAll('form'),
         inputs = document.querySelectorAll('input'),
@@ -17,15 +19,6 @@ const forms = () => {
         question: 'assets/question.php'
     };
 
-    const postData = async (url, data) => {
-        let res = await fetch(url, {
-            method: "POST",
-            body: data
-        });
-
-        return await res.text();
-    };
-
     const clearInputs = () => {
         inputs.forEach(item => {
             item.value = '';
@@ -39,12 +32,13 @@ const forms = () => {
         item.addEventListener('input', () => {
             console.log(item.files[0]);
             let dots;
-            let arr = item.files[0].name.split('.');
+            const arr = item.files[0].name.split('.');
 
-            arr[0].length > 6 ? dots = '...' : dots = '.'
-            item.previousElementSibling.textContent = arr[0].substring(0, 6) + dots + arr[1]
-        })
-    })
+            arr[0].length > 6 ? dots = "..." : dots = '.';
+            const name = arr[0].substring(0, 6) + dots + arr[1];
+            item.previousElementSibling.textContent = name;
+        });
+    });
 
     form.forEach(item => {
         item.addEventListener('submit', (e) => {
