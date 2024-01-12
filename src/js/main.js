@@ -6,6 +6,7 @@ import showMoreStyles from "./modules/showMoreStyles";
 import pictureSize from "./modules/pictureSize";
 import filter from "./modules/filter";
 import forms from "./modules/form";
+import calc from "./modules/calc";
 window.addEventListener('DOMContentLoaded', () => {
     modals();
     slider('.feedback-slider-item', 'horizontal', '.main-prev-btn', '.main-next-btn');
@@ -16,5 +17,6 @@ window.addEventListener('DOMContentLoaded', () => {
     showMoreStyles('.button-styles', '#styles .row');
     pictureSize('.sizes-block')
     filter()
+    calc('#size', '#material', '#options', '.promocode', '.calc-price');
     forms()
 });
