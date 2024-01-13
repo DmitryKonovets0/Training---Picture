@@ -7,8 +7,10 @@ import pictureSize from "./modules/pictureSize";
 import filter from "./modules/filter";
 import forms from "./modules/form";
 import calc from "./modules/calc";
+import accordion from "./modules/accordion";
 window.addEventListener('DOMContentLoaded', () => {
     modals();
+    accordion('.accordion-heading');
     slider('.feedback-slider-item', 'horizontal', '.main-prev-btn', '.main-next-btn');
     slider('.main-slider-item', 'vertical');
     mask('[name="phone"]');

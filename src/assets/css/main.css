@@ -9,6 +9,22 @@
 .status {
   text-align: center;
 }
+.often-questions .accordion-block.active-content {
+  overflow: visible;
+  opacity: 1;
+  padding: 3rem 4rem;
+  margin-top: 1rem;
+}
+.often-questions .accordion-block {
+  background-color: #f7e7e6;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+}
+.often-questions .accordion-heading.active+.accordion-block {
+  display: block;
+}
 @font-face {
   font-family: 'Circe Regular';
   src: url('../fonts/Circe-Regular.eot');
