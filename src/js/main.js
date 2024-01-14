@@ -8,6 +8,7 @@ import filter from "./modules/filter";
 import forms from "./modules/form";
 import calc from "./modules/calc";
 import accordion from "./modules/accordion";
+import burger from "./modules/burger";
 window.addEventListener('DOMContentLoaded', () => {
     modals();
     accordion('.accordion-heading');
@@ -21,4 +22,5 @@ window.addEventListener('DOMContentLoaded', () => {
     filter()
     calc('#size', '#material', '#options', '.promocode', '.calc-price');
     forms()
+    burger('.burger', '.burger-menu')
 });
