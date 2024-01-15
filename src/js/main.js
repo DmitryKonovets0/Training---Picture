@@ -9,6 +9,7 @@ import forms from "./modules/form";
 import calc from "./modules/calc";
 import accordion from "./modules/accordion";
 import burger from "./modules/burger";
+import drag from "./modules/drag";
 window.addEventListener('DOMContentLoaded', () => {
     modals();
     accordion('.accordion-heading');
@@ -23,4 +24,5 @@ window.addEventListener('DOMContentLoaded', () => {
     calc('#size', '#material', '#options', '.promocode', '.calc-price');
     forms()
     burger('.burger', '.burger-menu')
+    drag()
 });
